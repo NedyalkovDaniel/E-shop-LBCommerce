@@ -1,27 +1,9 @@
 
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css);
-
-
-body {
-    background-color: #fefefe;
-    padding: 12px 120px 80px 120px;
-}
-
-.map-container {
-    text-align: center;
-}
-  hr {
-    width: 52px;
-    font-weight: bold;
-    color: black;
-    background-color: black;
-    height: 2px;
-    border: none;
-  }
 
 header {
     display: flex;
     justify-content: space-between;
+    background-color: #1675e0;
   }
 header nav ul {
     list-style: none;
@@ -44,7 +26,7 @@ header nav ul {
   }
   header .titles .title {
     margin: 0px;
-    color: #1675e0;
+    color: #e05316;
   }
   header .titles .sub-title {
     margin: 0px;
@@ -53,124 +35,3 @@ header nav ul {
   }
 
 
-main .Need-parts {
-    padding: 60px 68px 60px 68px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  main .Need-parts .content {
-    width: 55%;
-  }
-  main .Need-parts .content .description {
-    width: 58%;
-    line-height: 1.2;
-  }
-  main .Need-parts .content button {
-    border: solid 1px black;
-    background-color: red;
-    padding: 6px 12px;
-  }
-main .Products-title {
-  margin: 0px;
-  text-align: center;
-  flex-basis: 100%;
-   margin-bottom: 20px;
-   margin-top: 50px;
-}
-main .Products .Part {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 14px;
-    margin-top: 12px;
-}
-    main .Products .Part img,
-    .people-card img {
-        width: 128px;
-        height: 128px;
-        border-radius: 100%;
-        object-fit: cover;
-    }
-    main .Products.Part .Part-name {
-        font-weight: bold;
-        margin-bottom: 0px;
-        font-size: 14px;
-    }
-    main .Products .Part {
-        margin-top: 5px;
-        font-size: 14px;
-    }
-    main .Products .Part {
-        margin-top: 0px;
-        font-size: 14px;
-    }
-main .Products {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.Search-number {
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 50px 34px 50px;
-  }
-  .number {
-    color: white;
-    margin-top: 0px;
-  }
-  .subscribe {
-    margin-top: 10px;
-  }
-  .subscribe button {
-    background-color: white;
-    font-size: 10px;
-    padding: 4px 10px;
-    border: none;
-    border-radius: 2px;
-  }
-.people-card {
-    margin-right: 30px;
-}
-  footer{
-    background-color: #fefefe;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: red;
-    padding: 20px 50px 20px 50px;
-  }
-  #contacts ul{
-    list-style: none;
-  }
-  #contacts ul li{
-    margin-top: 4px;
-  }
-  #contacts ul li i{
-    margin-right: 5px;
-  }
-  footer section .title{
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
-  footer section nav ul li a{
-    text-decoration: none;
-    color: black;
-  }
-  footer section nav ul{
-    list-style: none;
-  }
-  footer section nav ul li{
-    margin-bottom: 5px;
-  }
-  footer section{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 33.33%;
-  }

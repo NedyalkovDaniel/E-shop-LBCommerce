@@ -22,7 +22,6 @@ function Header (){
                 <li>
                     <a href="contacts.html">Контакти</a>
                 </li>
-                <p class="menu">Menu</p>
             </ul>
         </nav>
         </header>
