@@ -6,7 +6,7 @@ function Header (){
         <header>
         <section class="titles">
             <h1 class="title">LB Commerce</h1>
-            <h3 class="sub-title">Car Parts Shop</h3>
+            <h3 class="sub-title">Магазин за авточасти</h3>
         </section>
         <nav>
             <ul>
