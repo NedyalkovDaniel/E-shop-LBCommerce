@@ -1,3 +1,4 @@
+import LoginSignup from './LoginSignup.jsx'
 import Header from './Header.jsx'
 import { useEffect } from "react";
 
@@ -22,8 +23,7 @@ function App() {
 
   return(
     <>
-    <Header></Header>
-
+    <LoginSignup/>
     </>
   );
 
