@@ -1,5 +1,8 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginSignup from './LoginSignup.jsx'
 import Header from './Header.jsx'
+import Home from './Home.jsx'
 import { useEffect } from "react";
 
 function App() {
@@ -22,10 +25,17 @@ function App() {
   }, []);
 
   return(
-    <>
-    <LoginSignup/>
-    </>
-  );
+        <Router>
+          <Routes>
+            <Route path="/" element={<LoginSignup />} />
+            <Route path="/Header" element={<Header />} />
+            <Route path="/Home" element={<Home />} />
+          </Routes>
+        </Router>
+      );
+
+    
+  
 
 }
 
