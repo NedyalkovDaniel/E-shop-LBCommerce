@@ -5,6 +5,18 @@
       "username": "admin",
       "email": "dancheff@abv.bg",
       "password": "123456"
+    },
+    {
+      "id": "59c8",
+      "username": "kmkm",
+      "email": "dancheff2@abv.bg",
+      "password": "14444"
+    },
+    {
+      "id": "1a8b",
+      "username": "asdasd",
+      "email": "dancheff3@abv.bg",
+      "password": "1234565"
     }
   ]
 }

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LoginSignup = () => {
+const LoginSignup = ({ setIsLoggedIn }) => {
   const [action, setAction] = useState("Login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +22,9 @@ const LoginSignup = () => {
         
         if (user) {
           console.log("Login successful", user);
-          navigate("/App");
+          localStorage.setItem("user", JSON.stringify(user));
+          setIsLoggedIn(true);
+          navigate("/");
         } else {
           setError("Невалиден имейл или парола!");
         }
@@ -32,14 +34,23 @@ const LoginSignup = () => {
       }
     } else {
       try {
-        const response = await fetch(url, {
+        const response = await fetch(url);
+        const users = await response.json();
+        const existingUser = users.find(user => user.email === email);
+
+        if (existingUser) {
+          setError("Имейлът вече е използван за регистрация.");
+          return;
+        }
+
+        const registerResponse = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, email, password })
         });
         
-        if (!response.ok) throw new Error("Error registering user");
-        const data = await response.json();
+        if (!registerResponse.ok) throw new Error("Error registering user");
+        const data = await registerResponse.json();
         console.log("User registered successfully", data);
         
         setUsername("");
@@ -54,7 +65,7 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className="container">
+       <div className="container">
       <div className="header">
         <div className="text">{action}</div>
         <div className="underline"></div>
@@ -131,10 +142,8 @@ const LoginSignup = () => {
         </div>
       </form>
     </div>
-  );
+    
+  )
 };
 
-export default LoginSignup;
-
-
-
+export default LoginSignup

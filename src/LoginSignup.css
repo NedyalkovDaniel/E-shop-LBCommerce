@@ -100,6 +100,10 @@ body {
     cursor: pointer;
 }
 
+.error{
+    color: red;
+}
+
 .gray{
     background: white;
     color: rgb(129, 124, 124);

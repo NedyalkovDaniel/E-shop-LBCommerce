@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Импортираме Link за маршрутизация
+import { Link } from 'react-router-dom'; 
 
 function Header() {
   return (
@@ -10,7 +10,6 @@ function Header() {
     </section>
     <nav>
       <ul>
-        {/* Използваме Link вместо <a> за навигация без презареждане на страницата */}
         <li>
           <Link to="/Home">Начало</Link> {/* Навигация към началната страница */}
         </li>
