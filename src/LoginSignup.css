@@ -1,20 +1,23 @@
-body {
+.login-page {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     height: 100vh;
     background-color: rgb(169, 162, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container{
+.login-page .container {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
     width: 600px;
     background: white;
     padding-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.header{
+.login-page .header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,27 +26,27 @@ body {
     margin-top: 30px;
 }
 
-.text{
-    color:blueviolet;
+.login-page .text {
+    color: blueviolet;
     font-size: 48px;
     font-weight: 700;
 }
 
-.underline{
+.login-page .underline {
     width: 61px;
     height: 6px;
     background: blueviolet;
     border-radius: 9px;
 }
 
-.inputs{
+.login-page .inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.input{
+.login-page .input {
     display: flex;
     align-items: center;
     margin: auto;
@@ -51,17 +54,18 @@ body {
     height: 80px;
     background: rgb(201, 190, 190);
     border-radius: 6px;
+    padding: 0 15px;
 }
 
-.input img{
+.login-page .input img {
     width: 24px;
     height: 24px;
-    margin: 0px 30px;
+    margin-right: 15px;
 }
 
-.input input{
+.login-page .input input {
     height: 50px;
-    width: 400px;
+    width: 100%;
     background: transparent;
     border: none;
     outline: none;
@@ -69,25 +73,25 @@ body {
     font-size: 19px;
 }
 
-.forgot-password{
+.login-page .forgot-password {
     padding-left: 62px;
     margin-top: 27px;
     color: rgb(129, 124, 124);
     font-size: 18px;
 }
 
-.forgot-password span{
+.login-page .forgot-password span {
     color: blueviolet;
     cursor: pointer;
 }
 
-.submit-container{
+.login-page .submit-container {
     display: flex;
     gap: 30px;
     margin: 60px auto;
 }
 
-.submit{
+.login-page .submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,13 +102,19 @@ body {
     border-radius: 50px;
     font-size: 19px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.error{
+.login-page .submit:hover {
+    background: darkviolet;
+}
+
+.login-page .error {
     color: red;
+    text-align: center;
 }
 
-.gray{
+.login-page .gray {
     background: white;
     color: rgb(129, 124, 124);
 }

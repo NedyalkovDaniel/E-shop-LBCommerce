@@ -1,0 +1,35 @@
+.UniversalPage {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.UniversalInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 400px;
+}
+
+.UniversalContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+}
+  
+
+  
+  .UniversalInput:focus {
+    border-color: #007bff;
+  }
+  
+  @media (max-width: 600px) {
+    .UniversalInput {
+      width: 90%;
+    }
+  }

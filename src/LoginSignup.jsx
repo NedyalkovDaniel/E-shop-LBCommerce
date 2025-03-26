@@ -65,85 +65,86 @@ const LoginSignup = ({ setIsLoggedIn }) => {
   };
 
   return (
-       <div className="container">
-      <div className="header">
-        <div className="text">{action}</div>
-        <div className="underline"></div>
-      </div>
-      <form onSubmit={handleSubmit} className="inputs">
-        {action === "Sign Up" && (
+    <div className="login-page">
+      <div className="container">
+        <div className="header">
+          <div className="text">{action}</div>
+          <div className="underline"></div>
+        </div>
+        <form onSubmit={handleSubmit} className="inputs">
+          {action === "Sign Up" && (
+            <div className="input">
+              <img src="/user_icon.png" alt="" />
+              <input
+                type="text"
+                placeholder="User"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+          )}
           <div className="input">
-            <img src="/user_icon.png" alt="" />
+            <img src="/email_icon.png" alt="" />
             <input
-              type="text"
-              placeholder="User"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
-        )}
-        <div className="input">
-          <img src="/email_icon.png" alt="" />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input">
-          <img src="/password_icon.png" alt="" />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {action === "Login" && (
-          <div className="forgot-password">
-            Забравена парола? <span>Натисни тук!</span>
+          <div className="input">
+            <img src="/password_icon.png" alt="" />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
-        )}
-        
-        {error && <div className="error-message">{error}</div>}
-        
-        <div className="submit-container">
-          {action === "Login" ? (
-            <>
-              <button
-                type="button"
-                className="submit"
-                onClick={() => setAction("Sign Up")}
-              >
-                Регистрирай се
-              </button>
-              <button type="submit" className="submit">
-                Вход
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                type="button"
-                className="submit"
-                onClick={() => setAction("Login")}
-              >
-                Върни се в логин
-              </button>
-              <button type="submit" className="submit">
-                Регистрация
-              </button>
-            </>
+          {action === "Login" && (
+            <div className="forgot-password">
+              Забравена парола? <span>Натисни тук!</span>
+            </div>
           )}
-        </div>
-      </form>
+          
+          {error && <div className="error-message">{error}</div>}
+          
+          <div className="submit-container">
+            {action === "Login" ? (
+              <>
+                <button
+                  type="button"
+                  className="submit"
+                  onClick={() => setAction("Sign Up")}
+                >
+                  Регистрирай се
+                </button>
+                <button type="submit" className="submit">
+                  Вход
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className="submit"
+                  onClick={() => setAction("Login")}
+                >
+                  Върни се в логин
+                </button>
+                <button type="submit" className="submit">
+                  Регистрация
+                </button>
+              </>
+            )}
+          </div>
+        </form>
+      </div>
     </div>
-    
-  )
+  );
 };
 
-export default LoginSignup
+export default LoginSignup;
