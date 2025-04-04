@@ -13,6 +13,7 @@ const Layout = () => {
           <Link to="/vin">VIN</Link>
           <Link to="/vehicle">Автомобил</Link>
           <Link to="/universal">Универсални</Link>
+          <Link to="/products">Продукти</Link>
         </nav>
         <button className={styles.cartButton}>Моята количка</button>
       </header>
