@@ -4,8 +4,13 @@
       "id": "6dd3",
       "username": "admin",
       "email": "dancheff@abv.bg",
-      "password": "123456"
+      "password": "123456",
+      "shippingAddress": {
+        "name": "Даниел Недялков",
+        "phone": "0884692198",
+        "city": "София",
+        "address": "Офис еконт цар симеон 133"
+      }
     }
-  ],
-  "products": []
+  ]
 }

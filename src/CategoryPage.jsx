@@ -1,24 +1,21 @@
 import { useParams } from "react-router-dom";
-import productsData from "./data/products"; // Проверете дали пътят е верен!
-import "./CategoryPage.module.css"; // Добавяне на стилове
+import productsData from "./data/products";
+import "./CategoryPage.css"; // смени module.css с обикновен CSS за глобално ползване
 
 const CategoryPage = () => {
-  const { categorySlug } = useParams(); // Взимаме slug от URL
+  const { categorySlug } = useParams();
 
-  // Проверка дали categorySlug е валиден
   if (!categorySlug) {
     return <p>Категорията не е намерена. Моля, проверете URL-а.</p>;
   }
 
-  // Филтриране на продуктите според slug-а
   const filteredProducts = productsData.filter(
     (product) => product.category === categorySlug
   );
 
-  // Защита от undefined или празен slug
   const formattedCategorySlug = categorySlug
     ? categorySlug.replace("-", " ").toUpperCase()
-    : "Категория не е намерена"; // Задаваме fallback текст, ако slug е undefined
+    : "Категория не е намерена";
 
   return (
     <div className="categoryPage">
@@ -27,13 +24,29 @@ const CategoryPage = () => {
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id} className="productCard">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="productImage"
-              />
-              <h2 className="productName">{product.name}</h2>
-              <p className="productPrice">{product.price.toFixed(2)} BGN</p>
+              <div className="productLeft">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="productImage"
+                />
+              </div>
+              <div className="productInfo">
+                <h3 className="productName">{product.name}</h3>
+                <div className="productDetails">
+                  <p><strong>Код:</strong> {product.code}</p>
+                  <p><strong>Тип:</strong> {product.type}</p>
+                  <p><strong>Марка:</strong> {product.brand}</p>
+                  <p><strong>Опаковка:</strong> {product.package}</p>
+                </div>
+                <div className="productActions">
+                  <button>Информация</button>
+                </div>
+              </div>
+              <div className="productPriceBox">
+                <p className="productPrice"><strong>{product.price.toFixed(2)} BGN</strong></p>
+                <button className="buyButton">Купи</button>
+              </div>
             </div>
           ))
         ) : (
@@ -47,6 +60,7 @@ const CategoryPage = () => {
 };
 
 export default CategoryPage;
+
 
 
 

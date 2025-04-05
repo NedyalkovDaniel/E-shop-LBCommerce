@@ -1,0 +1,119 @@
+/* src/ProfilePage.module.css */
+.profilePage {
+    padding: 30px;
+    background-color: #f9f9f9; /* Светъл фон за по-чист и приятен вид */
+    max-width: 1000px; /* Ограничава ширината на страницата, за да не изглежда твърде разтегната */
+    margin: 0 auto; /* Центрира съдържанието на страницата */
+    border-radius: 12px; /* Закръглени ъгли за по-мек вид */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка за дълбочина */
+    background-color: #ffffff; /* Бял фон за профилната страница */
+  }
+  
+  h1, h2 {
+    font-size: 2rem;
+    color: #333; /* Тъмен цвят за заглавията за по-добра четимост */
+    margin-bottom: 20px;
+    font-weight: 600; /* Удебелени заглавия */
+  }
+  
+  h2 {
+    font-size: 1.75rem; /* По-малък размер за вторични заглавия */
+    margin-top: 30px;
+    color: #007bff; /* Син цвят за по-важните секции */
+  }
+  
+  .form {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #555; /* По-сив текст за етикетите */
+    font-weight: 500;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+
+  
+  input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  input:invalid {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+  }
+  
+  .submitButton {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .submitButton:hover {
+    background-color: #45a049;
+  }
+  
+  .submitButton:active {
+    background-color: #388e3c;
+  }
+  
+  .ordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .ordersTable th, .ordersTable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .ordersTable th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+  }
+  
+  .ordersTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .ordersTable tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .ordersTable td {
+    color: #555; /* По-сив текст за данни в таблицата */
+  }
+  
+  .ordersTable td:last-child {
+    text-align: right; /* За по-добро изравняване на последната колона */
+  }
+  
+  
+  

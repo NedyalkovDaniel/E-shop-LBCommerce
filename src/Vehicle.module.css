@@ -1,37 +1,48 @@
-
 .vehiclePage {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  padding: 40px 0;
 }
 
 .vehicleInput {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 400px;
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-.vehicleContainer {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
-  
 
-  
-  .vehicleInput:focus {
-    border-color: #007bff;
-  }
-  
-  @media (max-width: 600px) {
-    .vehicleInput {
-      width: 90%;
-    }
-  }
-  
+.brandItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.brandItem:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
+}
+
+.brandItem img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}

@@ -41,3 +41,38 @@
 .cartButton:hover {
     background: darkorange;
 }
+
+.logoLink {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .cartButton, .profileButton, .logoutButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .cartButton:hover,
+  .profileButton:hover,
+  .logoutButton:hover {
+    text-decoration: underline;
+  }
+  
+  .icon {
+    margin-right: 5px;
+    font-size: 18px;
+  }

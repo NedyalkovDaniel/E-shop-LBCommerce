@@ -7,7 +7,10 @@ import VehicleSearch from "./Vehicle.jsx"
 import VinSearch from "./VinSearch.jsx";
 import Universal from "./Universal.jsx";
 import Footer from "./Footer.jsx";
-import CategoryPage from "./CategoryPage";
+import CategoryPage from "./CategoryPage.jsx";
+import BrandPage from "./BrandPage.jsx";
+import ProfilePage from "./ProfilePage.jsx";
+import CartPage from "./CartPage.jsx"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,6 +36,9 @@ function App() {
             <Route path="vehicle" element={<VehicleSearch />} />
             <Route path="universal" element={<Universal />} />
             <Route path="/category/:categorySlug" element={<CategoryPage />} />
+            <Route path="/brands/:brandSlug" element={<BrandPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/cart" element={<CartPage />} />
           </Route>
         ) : (
           <Route path="*" element={<Navigate to="/login-signup" />} />

@@ -1,23 +1,43 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import styles from "./Layout.module.css";
+import { FaShoppingCart, FaUser, FaSignOutAlt } from "react-icons/fa"; // Икони
 
 const Layout = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Примерна логика за изход
+    localStorage.removeItem("user"); // Ако ползваш localStorage
+    navigate("/login-signup"); // Пренасочване към login
+  };
+
   return (
     <div>
-
       <header className={styles.header}>
-        <div className={styles.logo}>LB Commerce</div>
+        <div className={styles.logo}>
+          <Link to="/" className={styles.logoLink}>LB Commerce</Link>
+        </div>
+
         <nav className={styles.nav}>
           <Link to="/">Номер</Link>
           <Link to="/vin">VIN</Link>
           <Link to="/vehicle">Автомобил</Link>
           <Link to="/universal">Универсални</Link>
-          <Link to="/products">Продукти</Link>
         </nav>
-        <button className={styles.cartButton}>Моята количка</button>
-      </header>
 
+        <div className={styles.actions}>
+          <Link to="/cart" className={styles.cartButton}>
+            <FaShoppingCart className={styles.icon} /> Моята количка
+          </Link>
+          <Link to="/profile" className={styles.profileButton}>
+            <FaUser className={styles.icon} /> Профил
+          </Link>
+          <button onClick={handleLogout} className={styles.logoutButton}>
+            <FaSignOutAlt className={styles.icon} /> Изход
+          </button>
+        </div>
+      </header>
 
       <main>
         <Outlet />
@@ -27,3 +47,4 @@ const Layout = () => {
 };
 
 export default Layout;
+
