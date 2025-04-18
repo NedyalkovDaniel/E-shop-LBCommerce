@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import productsData from "./data/products"; // Увери се, че файлът съдържа "brand" поле!
+import productsData from "./data/products";
 import styles from "./BrandPage.module.css";
 
 const BrandPage = () => {
@@ -12,7 +12,6 @@ const BrandPage = () => {
 
   const formattedBrandName = brandSlug.replace("-", " ").toUpperCase();
 
-  // Филтрираме по марка (brand)
   const filteredProducts = productsData.filter(
     (product) => product.brand.toLowerCase().replace(/\s+/g, "-") === brandSlug
   );

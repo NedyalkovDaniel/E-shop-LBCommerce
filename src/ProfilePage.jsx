@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "./ProfilePage.module.css"; // Може да добавиш CSS за тази страница
+import styles from "./ProfilePage.module.css";
 
 const ProfilePage = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user"))); // Зареждаме потребителя от localStorage
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [formData, setFormData] = useState({
     oldPassword: "",
     newPassword: "",
@@ -13,7 +13,6 @@ const ProfilePage = () => {
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  // За промените в личните данни за доставка
   const handleShippingChange = (e) => {
     const { name, value } = e.target;
     setShippingData((prevState) => ({
@@ -22,7 +21,6 @@ const ProfilePage = () => {
     }));
   };
 
-  // За обновяване на паролата
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -31,7 +29,6 @@ const ProfilePage = () => {
     }));
   };
 
-  // За изпращане на данни за доставка
   const handleShippingSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,8 +39,8 @@ const ProfilePage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...user, // Добавяме всички данни на потребителя
-          shippingAddress: shippingData, // Актуализираме данните за доставка
+          ...user,
+          shippingAddress: shippingData,
         }),
       });
 
@@ -51,25 +48,21 @@ const ProfilePage = () => {
         throw new Error("Неуспешно обновяване на данни за доставка.");
       }
 
-      // Актуализираме потребителя в локалното хранилище
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
 
-      // Актуализираме потребителя в състоянието
       setUser(updatedUser);
       setSuccessMessage("Данните за доставка бяха актуализирани успешно.");
-      setError(""); // Няма грешка вече
+      setError("");
     } catch (error) {
       setError("Грешка при обновяване на данни за доставка. Моля, опитайте отново.");
-      setSuccessMessage(""); // Ако има грешка, не показваме съобщение за успех
+      setSuccessMessage("");
     }
   };
 
-  // За изпращане на новата парола
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Проверки за валидност на паролите
     if (formData.newPassword !== formData.confirmPassword) {
       setError("Новата парола не съвпада с потвърдената.");
       return;
@@ -80,7 +73,6 @@ const ProfilePage = () => {
       return;
     }
 
-    // Ако всички проверки са минали
     try {
       const response = await fetch(`http://localhost:5000/users/${user.id}`, {
         method: "PUT",
@@ -88,8 +80,8 @@ const ProfilePage = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...user, // Добавяме всички данни на потребителя
-          password: formData.newPassword, // Променяме само паролата
+          ...user,
+          password: formData.newPassword,
         }),
       });
 
@@ -155,7 +147,6 @@ const ProfilePage = () => {
         </button>
       </form>
 
-      {/* Форма за промяна на паролата */}
       <form onSubmit={handleSubmit} className={styles.form}>
         <h2>Промяна на парола</h2>
         {error && <div className={styles.errorMessage}>{error}</div>}

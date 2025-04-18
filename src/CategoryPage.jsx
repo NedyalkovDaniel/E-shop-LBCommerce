@@ -1,6 +1,26 @@
 import { useParams } from "react-router-dom";
 import productsData from "./data/products";
-import "./CategoryPage.css"; // смени module.css с обикновен CSS за глобално ползване
+import "./CategoryPage.css";
+
+const addToCart = (product) => {
+  try {
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const existingProduct = cart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity += 1;
+    } else {
+      product.quantity = 1;
+      cart.push(product);
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  } catch (error) {
+    console.error("Грешка при добавяне в количката:", error);
+  }
+};
+
 
 const CategoryPage = () => {
   const { categorySlug } = useParams();
@@ -45,7 +65,7 @@ const CategoryPage = () => {
               </div>
               <div className="productPriceBox">
                 <p className="productPrice"><strong>{product.price.toFixed(2)} BGN</strong></p>
-                <button className="buyButton">Купи</button>
+                <button className="buyButton" onClick={() => addToCart(product)}>Купи</button>
               </div>
             </div>
           ))

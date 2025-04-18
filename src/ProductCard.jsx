@@ -3,32 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
-  const navigate = useNavigate();
-
-  const addToCart = (product) => {
-    try {
-      console.log('Добавяме продукта в количката: ', product);
-
-      const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-      const existingProduct = cart.find((item) => item.id === product.id);
-
-      if (existingProduct) {
-        existingProduct.quantity += 1;
-        console.log('Продуктът вече съществува, увеличаваме количеството: ', existingProduct);
-      } else {
-        product.quantity = 1;
-        cart.push(product);
-        console.log('Продуктът не съществува, добавяме го в количката: ', product);
-      }
-
-      localStorage.setItem("cartItems", JSON.stringify(cart));
-      alert(`${product.name} е добавен в количката!`);
-    } catch (error) {
-      console.error('Грешка при добавяне на продукт в количката: ', error);
-    }
-  };
-
   return (
     <div className={styles.productCard}>
       <div className={styles.imageSection}>
@@ -59,15 +33,7 @@ const ProductCard = ({ product }) => {
         )}
 
         <div>
-          <button
-            className={styles.buyButton}
-            onClick={() => {
-              console.log('Бутонът беше натиснат!');
-              addToCart(product);
-            }}
-          >
-            Купи
-          </button>
+          
         </div>
       </div>
     </div>

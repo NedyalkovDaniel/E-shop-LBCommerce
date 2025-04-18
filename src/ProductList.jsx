@@ -1,13 +1,13 @@
-// ProductList.js
+
 import React from 'react';
-import ProductCard from './ProductCard'; // Импортирай компонента ProductCard
-import { products } from '../data/products'; // Импортирай масива с продукти
+import ProductCard from './ProductCard'; 
+import { products } from '../data/products';
 
 const ProductList = () => {
   return (
     <div className="product-list">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} /> // Рендирай всеки продукт чрез ProductCard
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
