@@ -11,6 +11,7 @@ import CategoryPage from "./CategoryPage.jsx";
 import BrandPage from "./BrandPage.jsx";
 import ProfilePage from "./ProfilePage.jsx";
 import CartPage from "./CartPage.jsx"
+import Checkout from "./checkout.jsx"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -39,6 +40,7 @@ function App() {
             <Route path="/brands/:brandSlug" element={<BrandPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Route>
         ) : (
           <Route path="*" element={<Navigate to="/login-signup" />} />

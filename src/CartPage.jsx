@@ -6,25 +6,21 @@ const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
-  // Зареждаме продуктите в количката от localStorage
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
     setCartItems(storedCart);
   }, []);
 
-  // Обновяване на количката в localStorage
   const updateLocalStorage = (updatedCart) => {
     setCartItems(updatedCart);
     localStorage.setItem('cartItems', JSON.stringify(updatedCart));
   };
 
-  // Изтриване на продукт от количката
   const removeFromCart = (productId) => {
     const updatedCart = cartItems.filter(item => item.id !== productId);
     updateLocalStorage(updatedCart);
   };
 
-  // Изчистване на количката
   const clearCart = () => {
     setCartItems([]);
     localStorage.removeItem('cartItems');

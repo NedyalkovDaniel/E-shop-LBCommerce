@@ -30,9 +30,7 @@ const BrandPage = () => {
                 className={styles.productImage}
               />
               <h2 className={styles.productName}>{product.name}</h2>
-              <p className={styles.productPrice}>
-                {product.price.toFixed(2)} BGN
-              </p>
+              
             </div>
           ))
         ) : (

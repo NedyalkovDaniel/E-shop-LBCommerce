@@ -364,11 +364,45 @@ const products = [
   },
   {
     id: 34,
-    name: "BMW 320d E90 Филтър",
-    category: "filters",
+    name: "BMW E36",
     brand: "BMW",
-    image: "/images/products/bmw320d-filter.jpg",
-    price: 49.99
+    image: "/e36.jpg",
+ 
+  },
+  {
+    id: 35,
+    name: "BMW E30",
+    brand: "BMW",
+    image: "/e30.jpg",
+ 
+  },
+  {
+    id: 36,
+    name: "BMW E46",
+    brand: "BMW",
+    image: "/e46.jpg",
+ 
+  },
+  {
+    id: 37,
+    name: "BMW E34",
+    brand: "BMW",
+    image: "/e34.jpg",
+ 
+  },
+  {
+    id: 38,
+    name: "BMW E39",
+    brand: "BMW",
+    image: "/e39.jpg",
+ 
+  },
+  {
+    id: 39,
+    name: "BMW E60",
+    brand: "BMW",
+    image: "/e60.jpg",
+ 
   }
 ];
 export default products;

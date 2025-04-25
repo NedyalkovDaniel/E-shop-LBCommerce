@@ -1,0 +1,71 @@
+.checkoutPage {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .orderSummary {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .total {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .checkoutForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+  }
+  
+  input,
+  textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+  
+  .submitButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
